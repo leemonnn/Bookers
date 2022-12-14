@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books= Book.all
+    @book= Book.all
   end
 
   def show
@@ -26,8 +26,8 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book= Book.new(book_params)
-  if @book.save
+     book= Book.new(book_params)
+  if book.save
     flash[:notice]= "This information successfully updated"
     redirect_to book_path(@book.id)
   else
