@@ -28,13 +28,12 @@
 
 <h2>新規投稿</h2>
 <% if @book.errors.any? %>
-   <%= @book.errors.count %>errors prohibited this book from being saved:
-<ul>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
     <ul>
      <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
      <% end %>
-     </ul>
+    </ul>
   <% end %>
 　<%= form_with model:@book, url: '/books', method: :post do |f| %>
   <h4>本のタイトル</h4>
